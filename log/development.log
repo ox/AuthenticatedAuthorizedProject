@@ -1,0 +1,1521 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (27.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100615162914)
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100615162914')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 12:30:44) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-15 12:30:52) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create and new):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-15 12:30:55) [GET]
+Rendering users/new
+Completed in 67ms (View: 55, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-15 12:31:04) [POST]
+  Parameters: {"authenticity_token"=>"l9YLDpi2E6d+JKnAkPHz9YUTYg5D4h+NCkkGY/T0yfs=", "user"=>{"login"=>"owlhuntr", "email"=>"artem.titoulenko@gmail.com", "password"=>"dapopo", "password_confirmation"=>"dapopo"}, "commit"=>"Sign up"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'artem.titoulenko@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("login", "name", "email", "crypted_password", "salt", "created_at", "updated_at", "remember_token", "remember_token_expires_at") VALUES('owlhuntr', '', 'artem.titoulenko@gmail.com', 'a21468372a3562ae80513571006cf47412e8da5c', '3c809581e741b817252af75070aa370e330188a0', '2010-06-15 16:31:04', '2010-06-15 16:31:04', NULL, NULL)[0m
+Redirected to http://localhost:3001/
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 12:31:04) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 12:31:52) [GET]
+Rendering sessions/new
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 12:31:57) [POST]
+  Parameters: {"authenticity_token"=>"l9YLDpi2E6d+JKnAkPHz9YUTYg5D4h+NCkkGY/T0yfs=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 25ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 12:31:57) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-15 12:32:24) [GET]
+Redirected to http://localhost:3001/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 12:32:24) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:33:53) [GET]
+Rendering welcome/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:39:37) [GET]
+
+NoMethodError (undefined method `current_user' for SessionsController:Class):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (108.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:42:22) [GET]
+
+NoMethodError (undefined method `current_user' for SessionsController:Class):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (108.3ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 12:42:35) [GET]
+Rendering sessions/new
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 12:42:41) [POST]
+  Parameters: {"authenticity_token"=>"/i+qPd/RKCHH3DDtG1DbaiR4nZY5oivnEX70BbJg9aY=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 27ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:42:41) [GET]
+
+NoMethodError (undefined method `current_user' for SessionsController:Class):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (112.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:45:08) [GET]
+
+NoMethodError (undefined method `current_user' for SessionsController:Class):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (110.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:45:12) [GET]
+
+NoMethodError (undefined method `current_user' for SessionsController:Class):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (71.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 12:45:15) [GET]
+Rendering sessions/new
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 12:45:19) [POST]
+  Parameters: {"authenticity_token"=>"/i+qPd/RKCHH3DDtG1DbaiR4nZY5oivnEX70BbJg9aY=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 72ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:45:19) [GET]
+
+NoMethodError (undefined method `current_user' for SessionsController:Class):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (71.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:48:19) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering welcome/index
+Completed in 35ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:49:01) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering welcome/index
+Completed in 34ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 12:49:07) [GET]
+Rendering sessions/new
+Completed in 44ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 12:49:11) [POST]
+  Parameters: {"authenticity_token"=>"/i+qPd/RKCHH3DDtG1DbaiR4nZY5oivnEX70BbJg9aY=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:49:11) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering welcome/index
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:50:15) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering welcome/index
+Completed in 37ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-15 12:51:07) [GET]
+Redirected to http://localhost:3001/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:51:07) [GET]
+
+NoMethodError (undefined method `login' for nil:NilClass):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:52:01) [GET]
+Rendering welcome/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 12:52:04) [GET]
+Rendering sessions/new
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 12:52:08) [POST]
+  Parameters: {"authenticity_token"=>"72qnNNEObC2BinAR1VJFtXPXWVqSbseydurxZUjq2Rs=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 28ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:52:08) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering welcome/index
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-15 12:52:12) [GET]
+Redirected to http://localhost:3001/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:52:12) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:52:47) [GET]
+
+NoMethodError (undefined method `authenticated' for nil:NilClass):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (111.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:53:35) [GET]
+
+NoMethodError (undefined method `authenticated?' for nil:NilClass):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (111.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 12:53:36) [GET]
+
+NoMethodError (undefined method `authenticated?' for nil:NilClass):
+  app/controllers/welcome_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (72.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100615162914)
+Migrating to CreateRoles (20100615175531)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "roles_users" ("role_id" integer, "user_id" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("roles_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_roles_users_on_role_id" ON "roles_users" ("role_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("roles_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_roles_users_on_role_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_roles_users_on_user_id" ON "roles_users" ("user_id")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100615175531')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("roles")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("roles_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_roles_users_on_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_roles_users_on_role_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:04:50) [GET]
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:04:50) [GET]
+Rendering sessions/new
+Completed in 66ms (View: 65, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 14:04:54) [POST]
+  Parameters: {"authenticity_token"=>"ozksmu+h1K6i+1UFuFwIVFSuor52iHW+vB1NL4i2+Yo=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 51ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:04:55) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+NoMethodError (undefined method `authorized?' for #<User:0x0000010224d5b0>):
+  app/controllers/welcome_controller.rb:5:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (115.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:06:16) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 90ms (View: 55, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-15 14:06:20) [GET]
+Redirected to http://localhost:3001/
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:06:20) [GET]
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:06:20) [GET]
+Rendering sessions/new
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:06:24) [GET]
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:06:24) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 14:06:29) [POST]
+  Parameters: {"authenticity_token"=>"/0s7OgRkw45ktMsJKBqPpw5aheC2EOKPtun8Tt8A4UM=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:06:29) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 18ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-15 14:13:44) [GET]
+Redirected to http://localhost:3001/
+Completed in 26ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:13:44) [GET]
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:13:44) [GET]
+Rendering sessions/new
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-15 14:13:50) [GET]
+Rendering users/new
+Completed in 93ms (View: 83, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-15 14:13:59) [POST]
+  Parameters: {"authenticity_token"=>"GsziT7YetL6GzqM2eayiFh9HADo5pqGV7mbgpFYCtgQ=", "user"=>{"login"=>"artem", "email"=>"artem.titoulenko@gmail.com", "password"=>"dapopo", "password_confirmation"=>"dapopo"}, "commit"=>"Sign up"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'artem') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'artem.titoulenko@gmail.com') LIMIT 1[0m
+Rendering users/new
+Completed in 21ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-15 14:14:09) [POST]
+  Parameters: {"authenticity_token"=>"GsziT7YetL6GzqM2eayiFh9HADo5pqGV7mbgpFYCtgQ=", "user"=>{"login"=>"artem", "email"=>"owlhuntr92@gmail.com", "password"=>"dapopo", "password_confirmation"=>"dapopo"}, "commit"=>"Sign up"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'artem') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'owlhuntr92@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("login", "name", "email", "crypted_password", "salt", "created_at", "updated_at", "remember_token", "remember_token_expires_at") VALUES('artem', '', 'owlhuntr92@gmail.com', '2c5f1ecb35ceca03d4c06e22c49b100ae19b1296', '4d08ad46b858bc2374e4f59fbad8f7600fddd376', '2010-06-15 18:14:09', '2010-06-15 18:14:09', NULL, NULL)[0m
+Redirected to http://localhost:3001/
+Completed in 58ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:14:09) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 2 ) [0m
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:14:09) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 14:14:14) [POST]
+  Parameters: {"authenticity_token"=>"GsziT7YetL6GzqM2eayiFh9HADo5pqGV7mbgpFYCtgQ=", "login"=>"artem", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'artem') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:14:14) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 2 ) [0m
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:14:14) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:25:09) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 2 ) [0m
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 32ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:25:09) [GET]
+Rendering sessions/new
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 14:25:14) [POST]
+  Parameters: {"authenticity_token"=>"GsziT7YetL6GzqM2eayiFh9HADo5pqGV7mbgpFYCtgQ=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:25:14) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 27ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 14:25:19) [GET]
+
+NameError (uninitialized constant RolesController::Roles):
+  app/controllers/roles_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (115.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 14:25:53) [GET]
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendering roles/index
+ERROR: compiling _run_erb_app47views47roles47index46html46erb RAISED /Users/Artem/Code/Web/Rails/AuthProject/app/views/roles/index.html.erb:5: syntax error, unexpected ';', expecting tCOLON2 or '[' or '.'
+;  end ; @output_buffer.concat "\n"
+        ^
+Function body: #coding:UTF-8
+          def _run_erb_app47views47roles47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Roles</h1>\n\n"
+
+;  for @roles.size do |role| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( role.name ).to_s); @output_buffer.concat "</br>\n"
+;  end ; @output_buffer.concat "\n"
+; @output_buffer.force_encoding(__ENCODING__)
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_view/renderable.rb:91:in `module_eval'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_view/renderable.rb:91:in `compile!'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/base.rb:936:in `render'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `block in render_with_benchmark'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/Users/Artem/.rvm/rubies/ruby-1.9.1-p378/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render_with_benchmark'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/base.rb:1326:in `default_render'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/base.rb:1332:in `perform_action'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `block in perform_action_with_benchmark'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/Users/Artem/.rvm/rubies/ruby-1.9.1-p378/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process_with_filters'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `block in call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rack-1.1.0/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:8:in `synchronize'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `block in call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `block in call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:636:in `process_client'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:709:in `block in worker_loop'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:707:in `each'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:707:in `worker_loop'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:595:in `fork'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:595:in `block in spawn_missing_workers'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:591:in `each'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:591:in `spawn_missing_workers'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:605:in `maintain_worker_count'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:269:in `start'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/lib/unicorn.rb:28:in `run'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/gems/unicorn-0.991.0/bin/unicorn_rails:210:in `<top (required)>'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+/Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+ActionView::TemplateError (/Users/Artem/Code/Web/Rails/AuthProject/app/views/roles/index.html.erb:5: syntax error, unexpected ';', expecting tCOLON2 or '[' or '.'
+;  end ; @output_buffer.concat "\n"
+        ^) on line #5 of app/views/roles/index.html.erb:
+2: 
+3: <% for @roles.size do |role| %>
+4:   <%= role.name %></br>
+5: <% end %>
+
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (123.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 14:27:13) [GET]
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendering roles/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://localhost/roles/index]
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 14:28:21) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendering roles/index
+Completed in 79ms (View: 44, DB: 1) | 200 OK [http://localhost/roles/index]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-15 14:28:25) [GET]
+Redirected to http://localhost:3001/
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:28:25) [GET]
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:28:25) [GET]
+Rendering sessions/new
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 14:28:30) [POST]
+  Parameters: {"authenticity_token"=>"MogwTgl8HZjpLMlIb1PIlYEovBl3zP3hUIQ1ieGGDEA=", "login"=>"artem", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'artem') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 14:28:31) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 2 ) [0m
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 14:28:31) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 15:01:21) [POST]
+  Parameters: {"authenticity_token"=>"MogwTgl8HZjpLMlIb1PIlYEovBl3zP3hUIQ1ieGGDEA=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 75ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:01:21) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `name' for "owlhuntr":String) on line #2 of app/views/welcome/index.html.erb:
+1: <h1>Welcome</h1>
+2: <%= @user.name %>
+
+    app/views/welcome/index.html.erb:2
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (92.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 15:04:58) [POST]
+  Parameters: {"authenticity_token"=>"MogwTgl8HZjpLMlIb1PIlYEovBl3zP3hUIQ1ieGGDEA=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:04:58) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `name' for "owlhuntr":String) on line #2 of app/views/welcome/index.html.erb:
+1: <h1>Welcome</h1>
+2: <%= @user.name %>
+
+    app/views/welcome/index.html.erb:2
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (93.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 15:05:01) [POST]
+  Parameters: {"authenticity_token"=>"MogwTgl8HZjpLMlIb1PIlYEovBl3zP3hUIQ1ieGGDEA=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:05:01) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `name' for "owlhuntr":String) on line #2 of app/views/welcome/index.html.erb:
+1: <h1>Welcome</h1>
+2: <%= @user.name %>
+
+    app/views/welcome/index.html.erb:2
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (86.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 15:05:37) [POST]
+  Parameters: {"authenticity_token"=>"MogwTgl8HZjpLMlIb1PIlYEovBl3zP3hUIQ1ieGGDEA=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:05:37) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+
+ActionView::TemplateError (undefined method `name' for "owlhuntr":String) on line #2 of app/views/welcome/index.html.erb:
+1: <h1>Welcome</h1>
+2: <%= @user.name %>
+
+    app/views/welcome/index.html.erb:2
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (92.5ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 15:06:26) [POST]
+  Parameters: {"authenticity_token"=>"MogwTgl8HZjpLMlIb1PIlYEovBl3zP3hUIQ1ieGGDEA=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 33ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:06:26) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 15:07:10) [POST]
+  Parameters: {"authenticity_token"=>"MogwTgl8HZjpLMlIb1PIlYEovBl3zP3hUIQ1ieGGDEA=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:07:11) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 26ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-06-15 15:07:21) [GET]
+Redirected to http://localhost:3001/
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:07:21) [GET]
+Redirected to http://localhost:3001/session/new
+Filter chain halted as [:check_authorization] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-15 15:07:21) [GET]
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-06-15 15:07:28) [POST]
+  Parameters: {"authenticity_token"=>"FadUkN2RJN0FKfiZ07IN3mdU1RtAe5VfRcZAN/RQfio=", "login"=>"owlhuntr", "password"=>"dapopo", "commit"=>"Log in"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'owlhuntr') LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:07:28) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 17ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:07:50) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 79ms (View: 44, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:07:51) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.4ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 19ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:12:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 79ms (View: 43, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-15 15:12:45) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: auth_requirements, auth_requirements=, authorization_denied, check_authorization, create, and new):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-15 15:12:53) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: auth_requirements, auth_requirements=, authorization_denied, check_authorization, create, and new):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 15:40:24) [POST]
+  Parameters: {"authenticity_token"=>"67/yZz7zWIKwTA3RpT0L7IkeDENIU2VMBYdyK0eYYgc=", "image"=>{"photo"=>#<File:/var/folders/xA/xAasNT-IHDKKctDcWBwWYU+++TI/-Tmp-/RackMultipart20100615-39858-8frsoq-0>}, "commit"=>"Upload"}
+
+ActionController::RoutingError (No route matches "/image/uploadimage" with {:method=>:post}):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 15:40:28) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 49ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 15:40:31) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" [0m
+
+ActionView::MissingTemplate (Missing template roles/index.erb in view path app/views):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#new (for 127.0.0.1 at 2010-06-15 15:40:35) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering roles/new
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x0000010357a220>) on line #1 of app/views/roles/new.rhtml:
+1: <% f.inputs do %>
+2:   <%= f.input :name, :label => 'Name' %>
+3: <% end %>
+
+    app/views/roles/new.rhtml:1:in `_run_rhtml_app47views47roles47new46rhtml'
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (96.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#new (for 127.0.0.1 at 2010-06-15 15:43:28) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering roles/new
+
+ActionView::TemplateError (undefined method `roles_path' for #<ActionView::Base:0x000001036078a8>) on line #1 of app/views/roles/new.rhtml:
+1: <% semantic_form_for @role do |f| %>
+2: <% f.inputs do %>
+3:   <%= f.input :name, :label => 'Name' %>
+4: <% end %>
+
+    formtastic (0.9.10) lib/formtastic.rb:1741:in `block in semantic_form_for'
+    formtastic (0.9.10) lib/formtastic.rb:1719:in `with_custom_field_error_proc'
+    formtastic (0.9.10) lib/formtastic.rb:1740:in `semantic_form_for'
+    app/views/roles/new.rhtml:1:in `_run_rhtml_app47views47roles47new46rhtml'
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (140.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#new (for 127.0.0.1 at 2010-06-15 15:44:10) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering roles/new
+
+ActionView::TemplateError (undefined method `roles_path' for #<ActionView::Base:0x000001033a1358>) on line #1 of app/views/roles/new.rhtml:
+1: <% semantic_form_for @role do |f| %>
+2: <% f.inputs do %>
+3:   <%= f.input :name, :label => 'Name' %>
+4: <% end %>
+
+    formtastic (0.9.10) lib/formtastic.rb:1741:in `block in semantic_form_for'
+    formtastic (0.9.10) lib/formtastic.rb:1719:in `with_custom_field_error_proc'
+    formtastic (0.9.10) lib/formtastic.rb:1740:in `semantic_form_for'
+    app/views/roles/new.rhtml:1:in `_run_rhtml_app47views47roles47new46rhtml'
+    <internal:prelude>:8:in `synchronize'
+    unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+    unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+    unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+    unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+    unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+    unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+    unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+    unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+    unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+    /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendered rescues/_trace (136.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#new (for 127.0.0.1 at 2010-06-15 15:44:31) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering roles/new
+Completed in 46ms (View: 12, DB: 1) | 200 OK [http://localhost/roles/new]
+
+
+Processing RolesController#create (for 127.0.0.1 at 2010-06-15 15:44:38) [POST]
+  Parameters: {"authenticity_token"=>"FadUkN2RJN0FKfiZ07IN3mdU1RtAe5VfRcZAN/RQfio=", "role"=>{"name"=>"idiot"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+ActionView::MissingTemplate (Missing template roles/create.erb in view path app/views):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#create (for 127.0.0.1 at 2010-06-15 15:47:57) [POST]
+  Parameters: {"authenticity_token"=>"FadUkN2RJN0FKfiZ07IN3mdU1RtAe5VfRcZAN/RQfio=", "role"=>{"name"=>"idiot"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.4ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mRole Create (0.5ms)[0m   [0;1mINSERT INTO "roles" ("name") VALUES('idiot')[0m
+Redirected to http://localhost:3001/roles
+Completed in 42ms (DB: 1) | 302 Found [http://localhost/roles]
+
+
+Processing RolesController#show (for 127.0.0.1 at 2010-06-15 15:47:58) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.4ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+ActionController::UnknownAction (No action responded to show. Actions: auth_requirements, auth_requirements=, authorization_denied, check_authorization, create, destroy, index, and new):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (not_found)
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 15:48:02) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" [0m
+
+ActionView::MissingTemplate (Missing template roles/index.erb in view path app/views):
+  <internal:prelude>:8:in `synchronize'
+  unicorn (0.991.0) lib/unicorn.rb:636:in `process_client'
+  unicorn (0.991.0) lib/unicorn.rb:709:in `block in worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:707:in `worker_loop'
+  unicorn (0.991.0) lib/unicorn.rb:598:in `block (2 levels) in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `fork'
+  unicorn (0.991.0) lib/unicorn.rb:595:in `block in spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `each'
+  unicorn (0.991.0) lib/unicorn.rb:591:in `spawn_missing_workers'
+  unicorn (0.991.0) lib/unicorn.rb:605:in `maintain_worker_count'
+  unicorn (0.991.0) lib/unicorn.rb:269:in `start'
+  unicorn (0.991.0) lib/unicorn.rb:28:in `run'
+  unicorn (0.991.0) bin/unicorn_rails:210:in `<top (required)>'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `load'
+  /Users/Artem/.rvm/gems/ruby-1.9.1-p378/bin/unicorn_rails:19:in `<main>'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 15:49:33) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendering roles/index
+Completed in 44ms (View: 9, DB: 1) | 200 OK [http://localhost/roles/index]
+
+
+Processing RolesController#index (for 127.0.0.1 at 2010-06-15 17:12:09) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendering roles/index
+Completed in 17ms (View: 1, DB: 1) | 200 OK [http://localhost/roles/index]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-06-15 17:12:16) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering welcome/index
+Completed in 54ms (View: 36, DB: 1) | 200 OK [http://localhost/]
